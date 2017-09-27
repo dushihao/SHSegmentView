@@ -25,6 +25,8 @@
 
 /// 标题数组
 @property (nonatomic,strong) NSArray *titleArray;
+/// 边框颜色 default :nil
+@property (nonatomic,strong) IBInspectable UIColor * bgBorderColor;
 /// 背景色(未选中背景色)
 @property (nonatomic,strong) IBInspectable  UIColor * contentColor;
 /// 背景标签颜色（未选中文字颜色）

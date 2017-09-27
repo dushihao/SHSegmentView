@@ -36,12 +36,13 @@
 
     self.seltedIndex = 0;
     self.spacing = 10;
+    self.bgBorderColor = [UIColor clearColor];
     self.contentColor = [UIColor redColor];
     self.placeHolderColor = [UIColor whiteColor];
     self.labelBackGroudColor = [UIColor whiteColor];
     self.labelTitleColor = [UIColor redColor];
     
-    self.layer.borderColor = self.contentColor.CGColor;
+    self.layer.borderColor =  self.bgBorderColor.CGColor ?:self.contentColor.CGColor;
     self.layer.borderWidth = 0.618;
     
     self.titleArray = [NSArray array];
@@ -145,6 +146,11 @@
 }
 
 #pragma mark - setter
+- (void)setBgBorderColor:(UIColor *)bgBorderColor{
+    _bgBorderColor = bgBorderColor;
+    self.layer.borderColor =  bgBorderColor.CGColor;
+}
+
 - (void)setContentColor:(UIColor *)contentColor{
     _contentColor = contentColor;
     self.backgroundColor = contentColor;
